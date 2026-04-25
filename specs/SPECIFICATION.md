@@ -5,7 +5,7 @@
 **Status**: Draft  
 **Input**: User description: "An interactive children's storytelling app that generates personalized bedtime stories with illustrations"
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios &amp; Testing *(mandatory)*
 
 ### User Story 1 - Create Personalized Story (Priority: P1)
 
