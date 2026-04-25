@@ -1,9 +1,4 @@
-<!-- Sync Impact Report
-Version Change: New constitution, starting at 0.1.0.
-Modified Principles: Code Quality, Testing Requirements, Error Handling, Performance Constraints, UX Consistency are now formalized under the new template structure.
-Added Principles: Development Workflow, Review Process, Governance.
-Removed Principles: None.
--->
+
 # Ideva Kit Project Constitution
 
 ## Core Principles
@@ -18,7 +13,7 @@ Strict — unit tests + E2E for critical paths. E2E tests must cover the critica
 User-facing errors must use plain language — never expose raw stack traces or internal IDs. All exceptions logged with full context (user_id, request_id, timestamp).
 
 ### Performance Constraints
-Core pages must load in under 2 seconds on a 4G connection. Largest Contentful Paint < 2.5s. No synchronous operations on the main thread.
+Core pages must load in under 2 seconds on a 4G connection. Largest Contentful Paint &lt; 2.5s. No synchronous operations on the main thread.
 
 ### UX Consistency
 Follow WCAG 2.1 AA accessibility standards. Consistent use of the design system — no one-off custom styles without design review. All interactive elements have visible focus states.
