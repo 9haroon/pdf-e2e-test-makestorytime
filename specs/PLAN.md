@@ -12,10 +12,10 @@ The primary requirement is to develop an interactive children's storytelling app
 **Language/Version**: TypeScript, Node.js (backend, v20+), React (frontend, v18+)  
 **Primary Dependencies**: Express.js (backend API), React/Next.js (frontend framework), ORM (e.g., Prisma or TypeORM for database interaction), Cloud SDKs (for AI/ML models and object storage).  
 **Storage**: PostgreSQL (for user profiles, story metadata, and interactive story states), S3-compatible Object Storage (for generated image illustrations).  
-**Testing**: Jest & React Testing Library (for frontend unit/component tests), Jest & Supertest (for backend unit/integration tests), Cypress or Playwright (for E2E tests covering critical paths like story generation and interactive navigation).  
+**Testing**: Jest &amp; React Testing Library (for frontend unit/component tests), Jest &amp; Supertest (for backend unit/integration tests), Cypress or Playwright (for E2E tests covering critical paths like story generation and interactive navigation).  
 **Target Platform**: Web (modern browsers)  
 **Project Type**: Full-stack web application (client-side React/Next.js, server-side Node.js API)  
-**Performance Goals**: Core pages load in under 2 seconds on a 4G connection. Largest Contentful Paint < 2.5s. Story generation (SC-001) in under 45 seconds. No synchronous operations on the main thread.  
+**Performance Goals**: Core pages load in under 2 seconds on a 4G connection. Largest Contentful Paint &lt; 2.5s. Story generation (SC-001) in under 45 seconds. No synchronous operations on the main thread.  
 **Constraints**: WCAG 2.1 AA accessibility standards. Consistent use of a design system (e.g., Material UI or Shadcn UI). Implement robust input validation and content moderation to ensure age-appropriateness (FR-005).  
 **Scale/Scope**: Initial launch targeting up to 10k concurrent users, supporting a growing library of personalized stories.
 
@@ -36,7 +36,7 @@ The primary requirement is to develop an interactive children's storytelling app
     *   All exceptions will be caught, logged with full context (e.g., `user_id`, `request_id`, `timestamp`), and handled gracefully.
     *   Specific handling for AI model failures, network interruptions, and storage limits will be implemented.
 -   **Performance Constraints**:
-    *   Frontend will implement lazy loading and efficient asset delivery to meet the <2s page load and <2.5s LCP targets.
+    *   Frontend will implement lazy loading and efficient asset delivery to meet the &lt;2s page load and &lt;2.5s LCP targets.
     *   Backend AI/ML integrations will be asynchronous.
     *   Story generation (SC-001) will be optimized to complete within 45 seconds through efficient model calls and parallel processing of text and image generation where feasible.
 -   **UX Consistency**:
@@ -178,7 +178,7 @@ frontend/
 
 ## Phased Delivery Plan
 
-**Phase 0: Project Setup & Research (1 week)**
+**Phase 0: Project Setup &amp; Research (1 week)**
 *   **Objective**: Lay the foundational architecture and validate AI model feasibility.
 *   **Tasks**:
     *   Set up monorepo structure (backend/frontend).
@@ -221,7 +221,7 @@ frontend/
     *   Allow users to re-open saved stories from the library.
 *   **Risks**: Data storage limits, ensuring cross-session persistence (FR-006), database performance for large libraries.
 
-**Phase 4: Refinement, Edge Cases & Export (1.5 weeks)**
+**Phase 4: Refinement, Edge Cases &amp; Export (1.5 weeks)**
 *   **Objective**: Address remaining functional requirements, edge cases, and enhance robustness.
 *   **Tasks**:
     *   Refine age-appropriateness validation (FR-005) with more sophisticated filters/moderation APIs.
@@ -231,7 +231,7 @@ frontend/
     *   Optimize performance to meet all SC targets and constitutional requirements.
 *   **Risks**: Complexity of PDF generation, integrating advanced content moderation, ensuring all edge cases are covered.
 
-**Phase 5: Final Testing & Deployment Readiness (0.5 week)**
+**Phase 5: Final Testing &amp; Deployment Readiness (0.5 week)**
 *   **Objective**: Comprehensive testing, security audit, and preparation for deployment.
 *   **Tasks**:
     *   Execute full E2E test suite.
@@ -243,9 +243,9 @@ frontend/
 
 ## Risks
 
-1.  **AI Model Quality & Consistency:** The quality and consistency of generated stories and illustrations (SC-002) are heavily dependent on the chosen AI models. Poor model outputs could significantly impact user experience and satisfaction.
-2.  **AI Latency and Cost:** Achieving the SC-001 (story generation < 45s) goal is critical. AI model response times and API costs need careful monitoring and optimization. High costs could impact scalability and business model.
-3.  **Content Moderation & Child Safety (FR-005):** Ensuring all generated content is age-appropriate and free from harmful elements is paramount. Implementing effective and robust content filtering mechanisms is a significant challenge.
+1.  **AI Model Quality &amp; Consistency:** The quality and consistency of generated stories and illustrations (SC-002) are heavily dependent on the chosen AI models. Poor model outputs could significantly impact user experience and satisfaction.
+2.  **AI Latency and Cost:** Achieving the SC-001 (story generation &lt; 45s) goal is critical. AI model response times and API costs need careful monitoring and optimization. High costs could impact scalability and business model.
+3.  **Content Moderation &amp; Child Safety (FR-005):** Ensuring all generated content is age-appropriate and free from harmful elements is paramount. Implementing effective and robust content filtering mechanisms is a significant challenge.
 4.  **Narrative Coherence in Interactive Stories:** Maintaining a coherent and engaging narrative flow across multiple decision points (FR-003) with AI generation can be complex, requiring sophisticated prompting and state management.
 5.  **Scalability of AI Services:** As user numbers grow, the ability of external AI services to handle increased demand and maintain performance without prohibitive costs is a potential bottleneck.
 6.  **Data Persistence (FR-006) Clarity:** Depending on whether user accounts are required or local device storage is used, the implementation of persistence will vary significantly and carry different risks (e.g., data loss with local storage, complexity of auth with accounts).
