@@ -1,0 +1,49 @@
+# Default Spec Kit workspace CI — seeded into each project repo under .github/workflows/ci.yml
+# when the workspace is initialised (see workspace_fs.seed_default_github_ci_workflow).
+#
+# - If package.json exists at repo root: Bun install, lint, and build run.
+# - If requirements.txt exists: pip install and pytest run (exit 5 = no tests collected → OK).
+# - If neither exists (specs-only phase): job still passes after checkout.
+
+name: Spec Kit CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  speckit-ci:
+    name: speckit-ci
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        if: hashFiles('package.json') != ''
+
+      - name: Node — install, lint, build
+        if: hashFiles('package.json') != ''
+        run: |
+          bun install
+          bun run lint
+          bun run build
+
+      - uses: actions/setup-python@v5
+        if: hashFiles('requirements.txt') != ''
+        with:
+          python-version: "3.12"
+
+      - name: Python — deps and tests
+        if: hashFiles('requirements.txt') != ''
+        run: |
+          pip install -r requirements.txt
+          pytest -q || { ec=$?; if [ "$ec" -eq 5 ]; then exit 0; else exit "$ec"; fi; }
+
+      - name: Specs-only repo (no Node/Python root manifest)
+        if: hashFiles('package.json') == '' && hashFiles('requirements.txt') == ''
+        run: echo "No package.json or requirements.txt at repo root — add one when you start application code."
