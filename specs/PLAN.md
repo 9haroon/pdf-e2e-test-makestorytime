@@ -18,8 +18,8 @@ This feature delivers an interactive web application that generates personalized
 **Target Platform**: Web browsers (modern desktop and mobile).
 **Project Type**: Full-stack Web Application.
 **Performance Goals**:
-*   Frontend: Core pages load in <2s (4G), LCP <2.5s.
-*   Backend: Story/illustration generation API responses <10s (allowing for AI model latency), subsequent interaction API responses <500ms.
+*   Frontend: Core pages load in &lt;2s (4G), LCP &lt;2.5s.
+*   Backend: Story/illustration generation API responses &lt;10s (allowing for AI model latency), subsequent interaction API responses &lt;500ms.
 **Constraints**: Strict child-safety and age-appropriateness for all generated content; graceful handling of AI model response times and potential failures; robust error logging.
 **Scale/Scope**: Initial implementation focuses on individual user stories and personal libraries. Designed for future scalability to support a growing user base and story complexity.
 
@@ -40,7 +40,7 @@ This feature delivers an interactive web application that generates personalized
     *   **All exceptions logged with full context (user_id, request_id, timestamp)**: Centralized logging service (e.g., Sentry, custom logger) will capture context for backend errors. Frontend errors will be reported via a similar mechanism.
 *   **IV. Performance Constraints**:
     *   **Core pages must load in under 2 seconds on a 4G connection**: Achieved through Next.js optimization (SSR/SSG), image optimization, efficient data fetching, and minimal bundle sizes.
-    *   **Largest Contentful Paint < 2.5s**: Monitored and optimized through performance tooling.
+    *   **Largest Contentful Paint &lt; 2.5s**: Monitored and optimized through performance tooling.
     *   **No synchronous operations on the main thread**: Enforced by async patterns for data fetching and heavy computation, Web Workers where appropriate for frontend.
 *   **V. UX Consistency**:
     *   **Follow WCAG 2.1 AA accessibility standards**: Accessibility audits during development and review, use of semantic HTML and ARIA attributes.
@@ -189,7 +189,7 @@ All APIs will be RESTful JSON endpoints.
 
 ## Phased Delivery Plan and Risks
 
-### Phase 0: Setup & Core Infrastructure (1-2 Days)
+### Phase 0: Setup &amp; Core Infrastructure (1-2 Days)
 *   **Tasks**:
     *   Project initialization (Next.js app, Node.js API).
     *   Database setup (PostgreSQL schema with `Story`, `Illustration` models).
@@ -237,7 +237,7 @@ All APIs will be RESTful JSON endpoints.
     *   Managing user identity (device-based vs. explicit accounts).
     *   Data storage limits if stories are very large or numerous.
 
-### Phase 4: Refinement, Moderation & Export (2-3 Days)
+### Phase 4: Refinement, Moderation &amp; Export (2-3 Days)
 *   **Tasks**:
     *   Implement `FR-005` clarification: Define specific content filtering guidelines and integrate a more robust moderation system (e.g., custom rules, third-party API).
     *   Implement `FR-007` (Export Story): Implement `/api/stories/{storyId}/export` for PDF/text output.
