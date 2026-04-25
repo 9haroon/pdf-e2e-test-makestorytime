@@ -1,11 +1,5 @@
 ```html
-<!--
-Sync Impact Report:
-Version Change: 0.1.0 -> 0.1.1 (PATCH)
-Modified Principles: None
-Added Principles: None
-Removed Principles: None
--->
+
 ```
 # Ideva Kit Project Constitution
 
@@ -41,13 +35,7 @@ This constitution supersedes all other project practices. Amendments require a d
 **Version**: 0.1.1 | **Ratified**: 2026-04-25 | **Last Amended**: 2026-04-25
 
 I will now write this content to the `specs/CONSTITUTION.md` file.
-<!--
-Sync Impact Report:
-Version Change: 0.1.0 -> 0.1.1 (PATCH)
-Modified Principles: None
-Added Principles: None
-Removed Principles: None
--->
+
 # Ideva Kit Project Constitution
 
 ## Core Principles
