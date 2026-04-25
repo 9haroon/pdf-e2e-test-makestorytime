@@ -15,7 +15,7 @@ The application will be a web-based platform allowing users to generate personal
 **Testing**: Vitest (Unit/Integration), Playwright (E2E)  
 **Target Platform**: Modern Web Browsers (Responsive)  
 **Project Type**: Full-stack Web Application  
-**Performance Goals**: <45s total generation time (first scene), <200ms latency for UI interactions  
+**Performance Goals**: &lt;45s total generation time (first scene), &lt;200ms latency for UI interactions  
 **Constraints**: Mobile-first responsive design, secure handling of child-safe content, offline capabilities via service workers (optional P2/P3)  
 **Scale/Scope**: MVP stage: focus on individual user sessions, expandable to multi-user accounts.
 
@@ -71,12 +71,12 @@ tests/
 
 ## Phased Delivery Plan
 
-### Phase 0: Research & Prototyping
+### Phase 0: Research &amp; Prototyping
 - Research prompt engineering for branching story generation.
 - Validate API latency for image generation vs. SC-001 requirement.
 - **Deliverable**: `research.md` (Benchmarking results).
 
-### Phase 1: Foundation & Data Design
+### Phase 1: Foundation &amp; Data Design
 - Define PostgreSQL schema for Stories and Choices.
 - Initialize Next.js app with Supabase authentication.
 - **Deliverable**: `data-model.md`, `contracts/`, `quickstart.md`.
@@ -87,12 +87,12 @@ tests/
 - Build the "Story Builder" UI.
 - **Deliverable**: Functional MVP that meets SC-001/SC-002.
 
-### Phase 3: Interactivity & Persistence (User Story 2 & 3)
+### Phase 3: Interactivity &amp; Persistence (User Story 2 &amp; 3)
 - Implement branching state machine.
 - Implement "Save to Library" functionality.
 - **Deliverable**: Full interactive flow + user dashboard.
 
-### Phase 4: Polish & Validation
+### Phase 4: Polish &amp; Validation
 - Implement input validation (FR-005) for safety.
 - E2E testing for all success criteria.
 
