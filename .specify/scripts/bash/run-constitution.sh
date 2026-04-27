@@ -112,7 +112,13 @@ Follow the semantic versioning rules for CONSTITUTION_VERSION:
 
 Set LAST_AMENDED_DATE to ${TODAY}.
 Prepend a Sync Impact Report as an HTML comment at the top (version change, modified/added/removed principles).
-Output ONLY the completed markdown document — no preamble or commentary.
+
+CRITICAL OUTPUT RULES — violating any of these will break the pipeline:
+- Output the markdown document EXACTLY ONCE.
+- Start your response with the very first character of the document (the HTML comment or the # heading). No introduction sentence before it.
+- End your response with the last character of the document (the version line). Nothing after it.
+- Do NOT say what you are about to do, what you did, or where the file will be written.
+- Do NOT wrap the output in a code block or any other container.
 
 ## Constitution Template
 
@@ -137,6 +143,10 @@ CONSTITUTION_MARKDOWN=$("$GEMINI_BIN" -m "$MODEL" -p "$PROMPT") \
     || { echo "Error: Gemini CLI exited with non-zero status." >&2; exit 2; }
 
 [[ -z "$CONSTITUTION_MARKDOWN" ]] && { echo "Error: Gemini returned empty output." >&2; exit 2; }
+
+# Strip any content after the version line to remove trailing commentary or duplicate copies.
+CONSTITUTION_MARKDOWN=$(printf '%s\n' "$CONSTITUTION_MARKDOWN" \
+    | awk '/^\*\*Version\*\*:/{print; exit} {print}')
 
 # ---------------------------------------------------------------------------
 # Step 4: Write to canonical path
