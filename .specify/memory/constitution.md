@@ -29,4 +29,4 @@ All code must undergo a thorough peer review before merging. Reviews should ensu
 
 This constitution supersedes all other project practices. Amendments require a documented proposal, team approval, and a clear migration plan. All PRs and reviews must explicitly verify compliance with these principles.
 
-**Version**: 0.1.1 | **Ratified**: 2026-04-25 | **Last Amended**: 2026-04-27
+**Version**: 0.1.2 | **Ratified**: 2026-04-25 | **Last Amended**: 2026-04-27
