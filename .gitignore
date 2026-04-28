@@ -8,6 +8,13 @@ build/
 .venv/
 venv/
 node_modules/
+backend/dist/
+frontend/.next/
+frontend/out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
 *.log
 .DS_Store
 Thumbs.db
@@ -22,3 +29,6 @@ Thumbs.db
 # ── IDE ───────────────────────────────────────────────────────────────────
 .idea/
 .vscode/
+
+.omc/
+.cursor/
