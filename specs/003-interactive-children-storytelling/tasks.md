@@ -136,7 +136,7 @@ description: "Task list for Interactive Children's Storytelling implementation"
 - [X] T041 Align moderation and logging with child-safety requirements (FR-005, SC-004) in `backend/src/services/moderation-service.ts` and audit log points in `backend/src/utils/logger.ts`
 - [X] T042 [P] Add Playwright E2E covering create story + at least one branch interaction in `frontend/tests/e2e/story-journey.spec.ts`
 - [X] T043 [P] Add Jest unit tests for story generation orchestration in `backend/tests/unit/story-generation-service.test.ts`
-- [ ] T044 Verify LCP/core Web Vitals and keyboard focus visibility on interactive elements under `frontend/src/components/` and `frontend/src/app/`
+- [X] T044 Verify LCP/core Web Vitals and keyboard focus visibility on interactive elements under `frontend/src/components/` and `frontend/src/app/`
 - [X] T045 Author local developer **quickstart** in `specs/003-interactive-children-storytelling/quickstart.md`
 
 ---
