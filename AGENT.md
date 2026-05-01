@@ -7,7 +7,7 @@ This project delivers an interactive web application for children's storytelling
 
 ## Tech Stack
 *   **Languages**: TypeScript
-*   **Frameworks**: React, Next.js (Frontend); Node.js, Express.js (Backend)
+*   **Frameworks**: React, Next.js version 16 (Frontend); Node.js, Express.js (Backend)
 *   **Databases**: PostgreSQL
 *   **Major Libraries**: Gemini API SDK, Radix UI/Shadcn UI/Tailwind CSS (UI), Prisma/TypeORM (ORM), Jest, React Testing Library, Supertest, Playwright/Cypress (Testing).
 
