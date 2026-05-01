@@ -1,0 +1,72 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum StoryStatus {
+  in_progress
+  completed
+}
+
+model Story {
+  id                String        @id @default(uuid())
+  sessionId         String?
+  session           Session?      @relation(fields: [sessionId], references: [id])
+  title             String
+  childName         String
+  childAge          Int
+  themePrompt       String
+  mood              String?
+  currentSceneIndex Int           @default(0)
+  status            StoryStatus   @default(in_progress)
+  storyContent      Json
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  illustrations     Illustration[]
+  libraryEntries    LibraryEntry[]
+}
+
+model Illustration {
+  id                String   @id @default(uuid())
+  storyId           String
+  story             Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  sceneIndex        Int
+  imageUrl          String
+  descriptionPrompt String
+  createdAt         DateTime @default(now())
+
+  @@index([storyId])
+}
+
+model Session {
+  id               String          @id @default(uuid())
+  createdAt        DateTime        @default(now())
+  stories          Story[]
+  libraryEntries   LibraryEntry[]
+  preferenceRecord UserPreference?
+}
+
+model LibraryEntry {
+  id                   String   @id @default(uuid())
+  sessionId            String
+  session              Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  storyId              String
+  story                Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  lastReadSceneIndex   Int      @default(0)
+  addedAt              DateTime @default(now())
+
+  @@unique([sessionId, storyId])
+  @@index([sessionId])
+}
+
+model UserPreference {
+  sessionId       String   @id
+  session         Session  @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  defaultChildName String?
+  defaultChildAge  Int?
+  updatedAt       DateTime @updatedAt
+}

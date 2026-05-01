@@ -1,0 +1,7 @@
+node_modules/
+backend/dist/
+frontend/.next/
+coverage/
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
