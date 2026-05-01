@@ -1,4 +1,3 @@
-```markdown
 # AGENT.md - AI Coding Assistant Guide
 
 This document outlines the conventions, architecture, and requirements for AI coding assistants contributing to this repository. Adherence to these guidelines ensures code quality, consistency, and alignment with project goals.
@@ -49,4 +48,3 @@ This project delivers an interactive web application for children's storytelling
 *   Generated content (text and illustrations) must strictly adhere to child-safety and age-appropriateness guidelines.
 *   Development must comply with WCAG 2.1 AA accessibility standards.
 *   All interactive UI elements must have visible focus states.
-```
